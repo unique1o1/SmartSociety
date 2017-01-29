@@ -1,0 +1,38 @@
+.mylist {
+  width: 300px;
+}
+
+
+
+.mylist ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mylist  li {
+  font: 170 12px/1.3 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+.mylist li:last-child {
+  border: none;
+}
+
+.mylist li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 380px;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.mylist li a:hover {
+  font-size: 20px;
+  background: #f6f6f6;
+}

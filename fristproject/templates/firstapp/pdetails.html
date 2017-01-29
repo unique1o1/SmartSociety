@@ -1,0 +1,14 @@
+{%extends "SmartSociety/header.html"%}
+{%block content%}
+	<div align="center">
+		<h1>Details for parking slots</h1>
+		<p><b>Slot: {{ park.slot }}</b></p>
+        <p><b>Availability:{{ park.availability }}</b></p>
+        <p><b>Time: {{ park.time }}</b></p>
+        <p><b>Bill:{{ park.bill }}</b></p>
+        <<img src="{{ park.parking_logo }}">
+        {% for car in park.cars_set.all %}
+            <li>{{ car.file_type }}= {{ car.carnumber }} </li>
+        {% endfor %}
+	</div>
+{%endblock%}

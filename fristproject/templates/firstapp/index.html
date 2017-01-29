@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1 class="bgi">
+Testing AJAX and JSON
+  </h1>
+
+<button id="thisclick" >
+ajax contents
+</button>
+
+
+<div id="animalinfo" onclick="myfunction()">
+<ul>
+{% for a in items %}
+	<li>{{a.title}}</li>
+	<li>{{x}}</li>
+{%endfor%}
+</ul>
+</div>
+<script>
+function myfunction(){
+	var name = '{{yunik|capfirst}}'
+document.getElementById("animalinfo") .innerHTML=name;
+}
+</script>
+{% endblock content %}

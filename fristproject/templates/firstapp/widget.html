@@ -1,0 +1,26 @@
+
+{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'font-awesome.min.css' %">
+<link href="{% static 'button.css' %}" type="text/css" rel="stylesheet">
+
+
+
+{%block content%} 
+	
+<span class='style'>
+<a href="#" class="floats" id="menu-share">
+<i class="fa fa-share my-float"></i>
+</a>
+<ul>
+<li><a href="tel:+9779862006834">
+<i class="fa fa-phone my-float"></i>
+</a></li>
+<li><a href="mailto:admin@nreports.com">
+<i class="fa fa-envelope my-float"></i>
+</a></li>
+<li><a href="https://twitter.com/search?q=%23tonepalreports" target="_blank">
+<i class="fa fa-twitter my-float"></i>
+</a></li>
+</ul>
+</span>
+{%endblock%}

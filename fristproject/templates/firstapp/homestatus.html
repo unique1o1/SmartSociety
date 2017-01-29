@@ -1,0 +1,9 @@
+{%extends "header.html"%}
+{%block content%}
+	<div align="center">
+		<h1>Details for Home Status</h1>
+	</div>
+	{% for hom in all_homestatus %}
+    <li><a href="/SmartSociety/{{ hom.id }}/">{{ hom.Status }}</a> </li>
+    {% endfor %}
+{%endblock%}

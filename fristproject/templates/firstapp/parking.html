@@ -1,0 +1,78 @@
+{%extends "header.html"%}
+
+{% load staticfiles %}
+
+{%block content%}
+  <script>
+     
+     // var x=JSON.parse('{{x}}');
+   		// alert(x[2])
+   	var x='{{x}}'
+
+   </script>
+<link rel="stylesheet" type="text/css" href="{% static 'parking.css'%}">
+<!-- <script type="text/javascript" src="{% static 'parking.js' %}"></script> -->
+<header>
+  <code class='heading'>&#60;header&#62;</code>
+</header>
+<center>
+
+  <section>
+  <code class='park' id='parks1'>Parking Avaiable
+  <br>
+  <br></code>
+</section>
+  <section>
+  <code class='park' id='parks2'>Parking Avaiable
+  <br>
+  <br></code>
+</section>
+  <section>
+  <code class='park' id='parks3'>Parking Avaiable
+  <br>
+  <br></code>
+</section>
+  <section>
+  <code class='park' id='parks4'>Parking Avaiable
+  <br>
+  <br></code>
+</section>
+  <section>
+  <code class='park' id='parks5'>Parking Avaiable
+  <br>
+  <br></code>
+</section>
+  <section>
+  <code class='park' id='parks6'>Parking Avaiable
+  <br>
+  <br></code>
+</section>
+  <section>
+  <code class='park' id='parks7'>Parking Avaiable
+  <br>
+  <br></code>
+</section>
+  <section>
+  <code class="park" id='parks8'>Parking Avaiable
+  <br>
+  <br></code>
+</section>
+ <section>
+  <code class="park" id='parks9'>Parking Avaiable
+  <br>
+  <br></code>
+</section>
+ <section>
+  <code class="park" id='parks10'>Parking Avaiable
+  <br>
+  <br></code>
+</section>
+</center>
+<footer class="footers">
+  <code class='footerss'>&#60;footer&#62;</code>
+</footer>
+<script type="text/javascript" src="{%static 'main.js'%}">
+		
+	</script>
+
+{%endblock%}

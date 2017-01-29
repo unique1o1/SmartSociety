@@ -1,0 +1,12 @@
+{%extends "header.html"%}
+{%block content%}
+	<div align="center">
+		<h1>Details of the Surrounding</h1>
+	</div>
+	{% for env in all_environment %}
+    <li><a href="/SmartSociety/{{ env.id }}/">Temperature:{{env.Temperature}}</a> </li>
+    <li><a href="/SmartSociety/{{ env.id }}/">Humidity:{{ env.Humidity }}</a> </li>
+    <li><a href="/SmartSociety/{{ env.id }}/">Garbage status:{{ env.Garbage }}</a> </li>
+    {% endfor %}
+	 
+{%endblock%}
