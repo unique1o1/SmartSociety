@@ -2,28 +2,45 @@ from pyfirmata import Arduino, util, Board
 import time
 
 def park():
-	board=Arduino('/dev/ttyACM2')
-	led=board.get_pin('d:13:o')
+	board=Arduino('/dev/ttyACM0')
+	
 	i=0
+
+	cars=0
 	it = util.Iterator(board)
 	it.start()
-	yes=1
-	no=0
-		
+	
+	# while cars<10:
+	# 	board.analog[cars].enable_reporting()board.analog[cars].enable_reporting()
+	# 	cars=cars+1
 	board.analog[0].enable_reporting()
+	board.analog[1].enable_reporting()
+	board.analog[2].enable_reporting()
+	# board.analog[3].enable_reporting()
+	# board.analog[4].enable_reporting()	
+	# board.analog[5].enable_reporting()
+
 	if i==0:
 		time.sleep(1.2)
 		i=1
-	x=board.analog[0].read()
-	print (x)
-	if x*1000>40:
-		led.write(0)
-		return yes
-	else:
-		led.write(1)
-		return no
+	cars=0
+	output=[2,2,2,2,2,2,2,2,2,2]	
+	while cars<3:	
+		x=board.analog[cars].read()
+		print (x*1000)
+		if x*1000>200:
+			# led.write(0)
+			output[cars]=1
+			print(output)
+
+		else:
+			# led.write(1)
+			output[cars]=0
+			
+		cars=cars+1
+	# return output
 	board.exit()
 def main():
-	x=park()
-	print(x)
+	park()
+	
 if __name__=="__main__":main()

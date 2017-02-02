@@ -35,6 +35,9 @@ urlpatterns = [
     url(r'^homestatus$', views.homestatus, name='homestatus'),
     url(r'^environment$', views.environment, name='environment'),
     #url(r'^$', views.index, name='index'),
+    url(r'^support$', views.support, name='support'),
+    url(r'^form-process$', views.getmessage, name='getmessage'),
 
     url(r'^admin/', admin.site.urls)
+
 ]
