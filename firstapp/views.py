@@ -40,26 +40,29 @@ def support(request):
 	return render(request, 'firstapp/support.html')
 
 def getmessage(request):
-	if request.method == 'POST':
-		# create a form instance and populate it with data from the request:
-		form = support(request.POST)
-		# check whether it's valid: 
+	info = item(name=request.POST['your_name'],message=request.POST['your_message'],number=request.POST['your_number'],email=request.POST['your_email'])
+	info.save()
+	return render(request,'firstapp/home.html')
+	# if request.method == 'POST':
+		# # create a form instance and populate it with data from the request:
+		# form = support(request.POST)
+		# # check whether it's valid: 
 
-		if form.is_valid():
-			info=item(name=form.cleaned_data['your_name'],message=form.cleaned_data['your_message'],number=form.cleaned_data['your_number'],email=form.cleaned_data['your_email'])
+		# if form.is_valid():
+		# 	info=item(name=form.cleaned_data['your_name'],message=form.cleaned_data['your_message'],number=form.cleaned_data['your_number'],email=form.cleaned_data['your_email'])
 		   	
-			info.save()
+		# 	info.save()
 			
-		else:
-			form = support()
-		return render(request, 'firstapp/name.html', {'form': form})
+		# else:
+		# 	form = support()
+		# return render(request, 'firstapp/name.html', {'form': form})
         		
-         # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
+  #        # process the data in form.cleaned_data as required
+  #           # ...
+  #           # redirect to a new URL:
             
 
-    # if a GET (or any other method) we'll create a blank form
+  #   # if a GET (or any other method) we'll create a blank form
     
         
     

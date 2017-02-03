@@ -3,7 +3,8 @@
 <link href='{% static 'support.css'%}' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="{% static 'support.js'%}"></script>
 <script type="text/javascript" src="{% static 'jquery-3.1.1.slim.min.js'%}"></script>
-<form id="contact-form" action="{% url 'getmessage' %}" method="post">
+<form id="contact-form" action="{% url 'getmessage' %}" method="post" onsubmit="popup()">
+    {% csrf_token %}
   <p>Your Message...,</p>
   <p>My
     <label for="your-name">name</label> is
@@ -36,3 +37,9 @@
 </form>
 
 <small class='website'>Vist <a href='http://robotics.keckist.edu.np' target='_blank'>robotics.keckist.edu.np</a> to see our work</small>
+<script>
+  function popup(){
+
+    alert("Your message was successfully submitted.. ")
+  }
+</script>
