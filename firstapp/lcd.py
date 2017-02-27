@@ -6,11 +6,7 @@ arduino = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
 arduinodata.write(b'r')
 while True:
     place = slot.objects.all()
-    x = []
-    y = 0
-    for num in place:
-        x[y] = num.slotno
-        y += 1
+    x = [num.slotno for num in place]
 
     for i in range(0, len(x)):
 
