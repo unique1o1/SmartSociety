@@ -1,4 +1,4 @@
-code {
+.park{
  
   border-radius: 6px;
   color: #fff;
@@ -6,32 +6,234 @@ code {
   font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
   padding: 24px 15px;
   text-align: center;
+   background: #2db34a;
+   cursor: pointer;
+   
+   transition: width 2s, height 2s;
+
 }
 
-.park{
-   background: #2db34a;
+.taken{
+background:#292D3E;
+  border-radius: 6px;
+  color: #fff;
+  display: block;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  padding: 24px 15px;
+  text-align: center;
+  
+   cursor: pointer;
+   
+   transition: width 2s, height 2s;
+
 }
+
+.reserve{
+    border-radius: 6px;  
+  display: block;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  padding: 24px 15px;
+  text-align: center;
+   background: #2db34a;
+   cursor: pointer;
+     color:red;
+    
+   transition: width 2s, height 2s;
+    box-shadow: 0px 5px 20px black;
+}
+
+
+
+.park:hover {
+    color:red;
+    box-shadow: 0px 5px 20px black;
+   
+}
+code{ border-radius: 6px;
+  color: #fff;
+  display: block;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  padding: 24px 15px;
+  text-align: center;
+   
+  }
+/*
+.park{
+  
+}*/
 .parked{
+   border-radius: 6px;
+  color: #fff;
+  display: block;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  padding: 24px 15px;
+  text-align: center;
+
+   cursor: pointer;
    background: #A10000;
 }
+
 
 
 .heading{
   background: #2db34a;
 }
 .footerss{
+  
+
+  visibility: hidden;
+
+ 
+}
+.goo{
+  transition: 1s;
   background: #2db34a;
+  opacity: 1;
+  visibility: visible;
 }
 header,
 section,
-aside,
-.footers {
+aside{
   margin: 0 8% 18px 8%;
+  
+
 }
+
 section {
   display: inline-block;
   width: 25%;
 }
 footer {
   margin-bottom: 0;
+}
+
+
+
+/********/
+
+
+
+.button {
+visibility: hidden;
+
+}
+
+.btn{
+    background: #76B3FA;
+  border-radius: 100px;
+
+  color: #fff;
+  visibility: visible;
+  font-size: 1.4em;
+  margin: 0 15px;
+  
+}
+
+/* Hover state animation applied here */
+.button:hover { 
+  -webkit-animation: hover 1200ms linear 2 alternate;
+  animation: hover 1200ms linear 2 alternate;
+}
+
+/* Active state animation applied here */
+.button:active {
+  -webkit-animation: active 1200ms ease 1 alternate;
+  animation: active 1200ms ease 1 alternate; 
+  background: #5F9BE0;
+}
+/* Active state animation keyframes below */
+
+@-webkit-keyframes active { 
+  0% {transform: scale(1,1);}
+  90% {transform: scale(.9,.88);}
+  100% {transform: scale(.92,.9);}
+}
+
+@keyframes active { 
+  0% {transform: scale(1,1);}
+  90% {transform: scale(.9,.88);}
+  100% {transform: scale(.92,.9);}
+}
+
+
+
+/**************popup***********/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.01); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
 }

@@ -5,73 +5,105 @@
 {%block content%}
   <script>
      
-     var x=JSON.parse('{{x}}');
+     var y=JSON.parse('{{x}}');
+     var i=0;
+     var slot;
+     var past;
 
    		// alert(x[2])
    	// var x='{{x}}'
 
    </script>
 <link rel="stylesheet" type="text/css" href="{% static 'parking.css'%}">
-<!-- <script type="text/javascript" src="{% static 'parking.js' %}"></script> -->
+
 <header>
-  <code class='heading'>&#60;header&#62;</code>
+
+
+  <code class='heading'>total avaible spaces is: {{space}}</code>
 </header>
 <center>
 
   <section>
-  <code class='park' id='parks1'>Parking Avaiable
-  <br>
-  <br></code>
+  <div class='park' id='parks1' onclick="reserve(this.id)">Parking Avaiable
+  </div>
 </section>
   <section>
-  <code class='park' id='parks2'>Parking Avaiable
-  <br>
-  <br></code>
+  <div class='park' id='parks2' onclick="reserve(this.id)">Parking Avaiable
+  </div>
 </section>
   <section>
-  <code class='park' id='parks3'>Parking Avaiable
-  <br>
-  <br></code>
+  <div class='park' id='parks3'  onclick="reserve(this.id)">Parking Avaiable
+  </div>
 </section>
   <section>
-  <code class='park' id='parks4'>Parking Avaiable
-  <br>
-  <br></code>
+  <div class='park' id='parks4' onclick="reserve(this.id)">Parking Avaiable
+  
+  </div>
 </section>
   <section>
-  <code class='park' id='parks5'>Parking Avaiable
-  <br>
-  <br></code>
+  <div class='park' id='parks5' onclick="reserve(this.id)">Parking Avaiable
+  
+  </div>
 </section>
   <section>
-  <code class='park' id='parks6'>Parking Avaiable
-  <br>
-  <br></code>
+  <div class='park' id='parks6' onclick="reserve(this.id)">Parking Avaiable
+  
+  </div>
 </section>
   <section>
-  <code class='park' id='parks7'>Parking Avaiable
-  <br>
-  <br></code>
+  <div class='park' id='parks7' onclick="reserve(this.id)">Parking Avaiable</div>
 </section>
   <section>
-  <code class="park" id='parks8'>Parking Avaiable
-  <br>
-  <br></code>
+  <div class="park" id='parks8' onclick="reserve(this.id)">Parking Avaiable
+  </div>
 </section>
  <section>
-  <code class="park" id='parks9'>Parking Avaiable
-  <br>
-  <br></code>
+  <div class="park" id='parks9' onclick="reserve(this.id)">Parking Avaiable</div>
 </section>
  <section>
-  <code class="park" id='parks10'>Parking Avaiable
-  <br>
-  <br></code>
+  <div class="park" id='parks10' onclick="reserve(this.id)">Parking Avaiable
+</div>
 </section>
 </center>
-<footer class="footers">
-  <code class='footerss'>&#60;footer&#62;</code>
-</footer>
+
+<!-- ***********popup windows******* -->
+
+
+<!-- Trigger/Open The Modal -->
+
+<center>
+ <button class="button" id='myBtn'> Reserve </button>
+
+</center>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+
+      <span class="close">&times;</span>
+    
+    <div class="modal-body">
+      <form method="post" action="{% url 'getslot' %}" onsubmit="popup()">
+        
+    {% csrf_token %}
+      <p style="font-size: 15px;">
+      <label for="rfid">Enter your RfID</label> </p>
+    <input type="text" name="code" id='rf' required pattern="[0-9a-zA-Z]{2}[ ][0-9a-zA-Z]{2}[ ][0-9a-zA-Z]{2}[ ][0-9a-zA-Z]{2}" id='rfid'placeholder="7C D3 E3 G2">
+   <input type="hidden" name="hiddenfield" id="rfidtag" value='1'>
+    <input type="hidden" name="hiddenfield" id="spc" value='1'>
+   <center>
+    <button class="btn" type="submit"> Submit </button>
+</center>
+      </form>
+    </div>
+    
+  </div>
+
+</div>
+
+<!-- ***********popup windows******* -->
+   
 <script type="text/javascript" src="{%static 'main.js'%}">
 		
 	</script>

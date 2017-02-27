@@ -37,7 +37,7 @@ urlpatterns = [
     #url(r'^$', views.index, name='index'),
     url(r'^support$', views.support, name='support'),
     url(r'^form-process$', views.getmessage, name='getmessage'),
-
+    url(r'^reserve$', views.getslot, name='getslot'),
     url(r'^admin/', admin.site.urls)
 
 ]
